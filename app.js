@@ -7,8 +7,9 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 
+//We can match /admin to appear before all routes in the adminRouter
 app.use(shopRouter);
-app.use(adminRouter);
+app.use("/admin", adminRouter);
 
 //Adding 404 page
 app.use((req, res, next) => {
