@@ -18,9 +18,16 @@ app.use((req, res, next) => {
     res.send("by middleware 2")
 })
 
+// In the express application source code, this is how the application server is created
 const server = http.createServer(app)
-
 server.listen(3000, ()=>{
     console.log("Listening on port 3000")
 })
+
+//Given that http.createserver is already called by the app instance, we can just call app.listen
+//It is an either way 
+app.listen(3000, ()=>{
+    console.log("listening on port 3000")
+})
+
 
