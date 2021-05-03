@@ -1,7 +1,7 @@
 extends layouts/main-layout.pug 
 
 block content
-    form.product-form(Action="/admin/add-product", method="POST") Add product 
+    form.product-form(action="/admin/add-product", method="POST") Add product 
         .form-control 
             label(for="title") Title 
             input(type="text" name="title")

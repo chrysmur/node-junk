@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> <%= pageTitle %> </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<!DOCTYPE html>
+<html>
+<body>
+    <header class="main-header">
+        <nav class="main-header-nav">
+            <ul class="main-header-nav_list">
+                <li class="main-header-item"><a href="/" class="{{#if activeShop }} active {{/if}}">Shop</a> </li>
+                <li class="main-header-item"><a class="{{#if activeAddproduct }} active {{/if}}" href="/admin/add-product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <% if (prods.length > 0) { %>
+            <div class="grid">
+                <% for (let prod of prods) { %>
+                <article class = "card product-item">
+                    <header class="card-header">
+                        <h1 class="product-title"><%= prod.title %></h1>
+                    </header>
+                    <div class="card-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png"/>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="product-price">$19</h2>
+                        <p class="product-description"> description </p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-info">Add to Cart</button>
+                    </div>
+                </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1> No Products</h1>
+        <% } %>
+    </main>
+</body> 
