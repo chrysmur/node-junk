@@ -1,0 +1,19 @@
+extends layouts/main-layout.pug 
+block styles    
+    link(rel="stylesheet", href="")
+block content  
+    div.grid 
+        if prods.length > 0
+            each prod in prods
+                article.card.product-item
+                    header.card-header 
+                        h1.product-title #{prod.title}
+                    div.card-image
+                        img(src="https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png", alt="Book")
+                    div.card-content
+                        h2.product-price $19.99
+                        p.product-description "A very interesting read"
+                    .card-actions
+                        button.btn Add to Cart
+        else 
+            h1 No products

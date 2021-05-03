@@ -9,7 +9,7 @@ const __dirname = path.resolve()
 const products = []; // We want to share data across calls
 
 adminRouter.get("/add-product", (req, res, next) => {
-    res.sendFile(path.join(rootDir, "views", "add-product.html"))
+    res.render("add-product", {pageTitle: "Admin add"})
 })
 
 adminRouter.post("/add-product", (req, res, next) => {

@@ -10,7 +10,8 @@ const shopRouter =  express.Router()
 
 shopRouter.get("/", (req, res, next) => {
   console.log(products)
-    res.sendFile(path.join(__dirname, 'views', 'shop.html')) // project root then views/shop.html
+  res.render('shop', {prods: products, doctitle:"Shop"})
+    //res.sendFile(path.join(__dirname, 'views', 'shop.pug')) // project root then views/shop.html
   });
   
 
